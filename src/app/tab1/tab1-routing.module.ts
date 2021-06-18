@@ -10,6 +10,10 @@ const routes: Routes = [
     //se grego la ruta al propio componente con la finalidad que no se pierda el footer
     path: 'agregar',
     loadChildren: () => import('../agregar/agregar.module').then( m => m.AgregarPageModule)
+  },
+  {
+    path: 'agregar/:listaId',
+    loadChildren: () => import('../agregar/agregar.module').then( m => m.AgregarPageModule)
   }
 ];
 
