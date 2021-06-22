@@ -6,6 +6,11 @@ const routes: Routes = [
   {
     path: '',
     component: Tab2Page,
+  },
+  {
+    //para que se direccione en el tap 2 cuando se seleccione a una nota en especifico
+    path: 'agregar/:listaId',
+    loadChildren: () => import('../agregar/agregar.module').then( m => m.AgregarPageModule)
   }
 ];
 

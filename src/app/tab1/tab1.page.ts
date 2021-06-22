@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { Lista } from '../models/lista.model';
 import { DeseosService } from '../services/deseos.service';
 
 @Component({
@@ -20,6 +21,7 @@ export class Tab1Page {
 
   }
 
+    //se crea la agregar lista para hacer una lista nueva en los metodos.
    async agregarLista(){
     //funcion para boton que te direcciona a la pantalla agregar
     //this.router.navigateByUrl('tabs/tab1/agregar');
@@ -55,6 +57,11 @@ export class Tab1Page {
     });
 
      alert.present();
+  }
+
+  listaSeleccionada(lista: Lista){
+    this.router.navigateByUrl(`tabs/tab1/agregar/${lista.id}`);
+
   }
 
 }

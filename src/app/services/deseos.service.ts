@@ -24,6 +24,7 @@ export class DeseosService {
    crearLista(titulo: string){
 
     const nuevaLista = new Lista(titulo);
+
     this.listas.push(nuevaLista);
     this.guardarStorage();
 
@@ -54,5 +55,11 @@ export class DeseosService {
      }else{
        this.listas= [];
      }
+   }
+  //Se de el metodo borrarlista  pasandole un lista tipo lista.
+   borrarLista(lista: Lista){
+     //de las listas se hace un filter se hace una lista data la cual se regresa las listas que son diferentes a la lista enviada
+     this.listas= this.listas.filter(listaData => listaData.id !== lista.id );
+     this.guardarStorage();
    }
 }
